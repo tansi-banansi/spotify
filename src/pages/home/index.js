@@ -4,16 +4,25 @@ import SearchBar from "../../components/searchbar";
 import SearchResults from "../../components/searchresult";
 import { useState } from "react";
 import styles from './index.module.css'
+import { useNavigate } from "react-router-dom";
 
 function HomePage(){
     const spotifyBaseUrl = 'https://api.spotify.com/v1';
     const spotifyAccessToken = localStorage.getItem('accessToken');
     const [playlist, setPlaylist] = useState([]);
     const [searchResults, setSearchResults] = useState([]);
+    const navigate = useNavigate();
   
     const addTrackToPlaylist = (track) =>{
       setPlaylist([...playlist, track])
     } 
+
+    const handleLogout = () =>{
+  
+        localStorage.removeItem('accessToken')
+        navigate("/authenticate");
+      
+    }
   
     const removeTrackFromPlaylist = (track) =>{
       setPlaylist(playlist.filter(item => item.id !== track.id))
@@ -23,6 +32,8 @@ function HomePage(){
     const handleSubmit = (event) => {
       event.preventDefault(); 
     };
+
+
   
     const handleSearch = async(searchQuery) => {
       const searchEndpoint = '/search';
@@ -60,7 +71,7 @@ function HomePage(){
   
           <h1>Jammming</h1>
   
-          <button className={styles.HomePageButton}>Logout</button>
+          <button className={styles.HomePageButton} onClick={handleLogout}>Logout</button>
   
           </header>
   
