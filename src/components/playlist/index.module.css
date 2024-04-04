@@ -1,0 +1,81 @@
+@font-face {
+    font-family: 'Vazirmatn';
+    src: url(../../../public/fonts/Vazirmatn/Vazirmatn-VariableFont_wght.ttf) format('truetype');
+}
+
+.Playlist * {
+  margin: 0;
+  padding: 0;
+  font-family: 'Vazirmatn', Arial, sans-serif ;
+}
+
+.Playlist{
+    background-color: rgba(255, 255, 255, 0.75);
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.15) ;
+    width: 30vw;
+    height: 60vh;
+    padding: 2vw 2vw 0vw 2vw;
+    box-sizing: border-box;
+    overflow-y: scroll;
+
+}
+
+.Playlist::-webkit-scrollbar {
+    width: 0.75vw; 
+  }
+  
+  
+.Playlist::-webkit-scrollbar-thumb {
+    background: #B7DBD7; 
+ 
+  }
+  
+
+.Playlist::-webkit-scrollbar-thumb:hover {
+    background: #95CAC4; 
+  }
+
+  
+.InputPlaylist{
+  background-color: transparent;
+  width: 100%;
+  border: none;
+  font-size: 1.5vw;
+  letter-spacing: 0.2vw;
+  font-weight: 500;
+  padding: 0;
+  font-family: 'Vazirmatn', Arial, sans-serif ;
+}
+
+.InputPlaylist:focus{
+  outline: none;
+}
+
+.InputPlaylist::placeholder {
+  color: #c6c6c6;
+  font-size: 1.5vw;
+  letter-spacing: 0.2vw;
+  font-weight: 500;
+  padding: 0;
+  font-family: 'Vazirmatn', Arial, sans-serif ;
+}
+
+
+.ButtonPlaylist{
+  background-color: #BFBEFC;
+  border: none;
+  padding: 0.5vw 1.5vw;
+  border-radius: 2vw;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 0.8vw;
+  font-weight: 600;
+  display: block;
+  margin: 1.5vw auto ;
+
+}
+
+.ButtonPlaylist:hover{
+  background-color: #8F8DFA;
+}
+

@@ -1,0 +1,57 @@
+@font-face {
+    font-family: 'Vazirmatn';
+    src: url(../../../public/fonts/Vazirmatn/Vazirmatn-VariableFont_wght.ttf) format('truetype');
+  }
+  
+.SearchBar {
+    font-family: 'Vazirmatn', Arial , sans-serif;
+    padding: 2.5vw; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+
+}
+
+.SearchBarInput {
+    background-color: rgba(255, 255, 255, .65);
+    font-size: 1vw;
+    margin-bottom: 1.5vw;
+    border: none;
+    width: 30vw;
+    border-radius: 0.5vw;
+    padding: 0.5vw 0.75vw;
+
+
+}
+
+.SearchBarInput::placeholder {
+    color: #999;
+    
+  }
+
+.SearchBarInput:hover{
+    background-color: rgba(255, 255, 255, .85)
+}
+
+.SearchBarInput:focus {
+    outline: 2px solid rgb(166, 166, 166); 
+  }
+
+.SearchBarButton{
+    background-color: #BFBEFC;
+    border: none;
+    padding: 0.5vw 1.5vw;
+    border-radius: 2vw;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 0.8vw;
+    font-weight: 600;
+
+
+}
+
+.SearchBarButton:hover{
+    background-color: #8F8DFA;
+}
+

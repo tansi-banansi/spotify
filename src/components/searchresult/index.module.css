@@ -1,0 +1,41 @@
+@font-face {
+    font-family: 'Vazirmatn';
+    src: url(../../../public/fonts/Vazirmatn/Vazirmatn-VariableFont_wght.ttf) format('truetype');
+}
+
+.SearchResults * {
+  margin: 0;
+  padding: 0;
+  font-family: 'Vazirmatn', Arial, sans-serif ;
+}
+
+.SearchResults {
+    background-color: rgba(255, 255, 255, 0.75);
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.15) ;
+    width: 30vw;
+    height: 60vh;
+    padding: 2vw;
+    box-sizing: border-box;
+    overflow-y: scroll;
+
+}
+
+.SearchResults::-webkit-scrollbar {
+  width: 0.75vw; 
+  }
+  
+.SearchResults::-webkit-scrollbar-thumb {
+    background: #F3B2B0; 
+ 
+  }
+  
+
+.SearchResults::-webkit-scrollbar-thumb:hover {
+    background: #EC8784; 
+  }
+
+.SearchResultsName{
+    font-size: 1.5vw;
+    letter-spacing: 0.2vw;
+    font-weight: 500;
+}

@@ -1,0 +1,59 @@
+@font-face {
+    font-family: 'Vazirmatn';
+    src: url(../../public/fonts/Vazirmatn/Vazirmatn-VariableFont_wght.ttf) format('truetype');
+}
+
+
+.Track{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+    padding-top: 0.75vw;
+    padding-bottom: 0.25vw;
+}
+
+.TrackInfo *{
+    font-size: 1vw;
+
+}
+
+.InSearchlist{
+    background-color: #F3B2B0;
+    border: none;
+    width: 1.25vw;
+    height: 1.25vw;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    cursor: pointer;
+    font-size: 1.5vw; 
+    font-weight: 300;
+    color: white; 
+    margin-left: 1vw;
+}
+
+.InSearchlist:hover{
+   background-color: #EC8784; 
+}
+
+.InPlaylist{
+    background-color: #B7DBD7;
+    border: none;
+    width: 1.25vw;
+    height: 1.25vw;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    cursor: pointer;
+    font-size: 1.5vw; 
+    font-weight: 300;
+    color: white; 
+    margin-left: 1vw; 
+}
+
+.InPlaylist:hover{
+    background-color: #95CAC4; 
+ }
