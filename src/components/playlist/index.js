@@ -7,15 +7,17 @@ function Playlist({onSubmit,playlist, onRemove}){
     const [playlistName, setPlaylistName] = useState('')
 
     const handleSubmit = (event) => {
-        event.preventDefault();     
+        event.preventDefault();  
+
         const playlistData = {
             name:playlistName,
             tracks: playlist.map(track => ({
-                id: track.id,
+                id: `spotify:track:${track.id}`,
                 name: track.name,
                 artist: track.artist
-            }))
+            })) 
 
+        
 
         }
         onSubmit(playlistData); 

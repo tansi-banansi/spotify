@@ -1,34 +1,52 @@
 const submitPlaylist = async (spotifyBaseUrl, spotifyAccessToken, userId, playlistData) =>{
-    const createPlaylistEndpoint = `/me/playlists`;
-    const endpoint = spotifyBaseUrl + createPlaylistEndpoint;
-    const body = JSON.stringify(playlistData)
-    alert(body)
-
+    const createPlaylistEndpoint = `/users/${userId}/playlists`;
+    
     try{
-        const response = await fetch(endpoint,{
+        const response = await fetch((spotifyBaseUrl + createPlaylistEndpoint ),{
             method: 'POST',
-            body: body,
             headers:{
                 Authorization: `Bearer ${spotifyAccessToken}`,
                 'Content-type': 'application/json',
-            }
+            },
+            body: JSON.stringify({
+                name: playlistData.name,
+                public: false,
+            })
         }) 
-        if(response.ok){
-            const jsonResponse = await response.json();
-            alert('saved')
-            
+        if(!response.ok){
+            throw new Error('Failed to create playlist');
+           
         }
 
-        else{
-            throw new Error('Request falied!');
-          }
+    
+        const playlist = await response.json();
+        const playlistId = playlist.id;
+
+        const addTracksEndpoint = `playlists/${playlistId}/tracks`; 
+    
+        const addTracksResponse = await fetch((spotifyBaseUrl + addTracksEndpoint), {
+            method: 'POST',
+            headers:{
+                Authorization: `Bearer ${spotifyAccessToken}`,
+                'Content-type': 'application/json',
+            },
+            body: JSON.stringify({
+                uris: playlistData.tracks.map(track => track.id),
+            }),
+             
+        })
+
+        alert('Saved to Spotify!')
+        
+        
+        if (!addTracksResponse.ok) {
+            throw new Error('Failed to add tracks to playlist');
+        }
 
     } catch(error){
 
         console.log(error)
     }
-
-
 
 }
 
