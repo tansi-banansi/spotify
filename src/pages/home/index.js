@@ -5,34 +5,47 @@ import SearchResults from "../../components/searchresult";
 import { useState } from "react";
 import styles from './index.module.css'
 import { useNavigate } from "react-router-dom";
+import getUserId from '../../components/features/spotifydetails'
+import submitPlaylist from "../../components/features/submitplaylist";
+
 
 function HomePage(){
     const spotifyBaseUrl = 'https://api.spotify.com/v1';
     const spotifyAccessToken = localStorage.getItem('accessToken');
     const [playlist, setPlaylist] = useState([]);
     const [searchResults, setSearchResults] = useState([]);
+    const [userId, setUserId] = useState('')
     const navigate = useNavigate();
   
     const addTrackToPlaylist = (track) =>{
       setPlaylist([...playlist, track])
     } 
-
-    const handleLogout = () =>{
-  
-        localStorage.removeItem('accessToken')
-        navigate("/authenticate");
-      
-    }
   
     const removeTrackFromPlaylist = (track) =>{
       setPlaylist(playlist.filter(item => item.id !== track.id))
       
     }
+
+    const handleLogout = () =>{
+  
+      localStorage.removeItem('accessToken')
+      navigate("/authenticate");
     
-    const handleSubmit = (event) => {
-      event.preventDefault(); 
+  }
+    
+    const handleSubmit = async (playlistData) => {
+      try {
+        const userId =  await getUserId(spotifyBaseUrl, spotifyAccessToken);
+        setUserId(userId);
+      } catch(e){
+        console.log(e);
+      }
+
+      submitPlaylist(spotifyBaseUrl, spotifyAccessToken, userId, playlistData)
+
     };
 
+   
 
   
     const handleSearch = async(searchQuery) => {

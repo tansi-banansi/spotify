@@ -1,6 +1,6 @@
 const client_id = '2b4d511c11bc46ba9e084361e9f7941f';
 const redirect_uri = 'http://localhost:3000/redirect'
-const scope = 'playlist-modify-private user-read-private user-read-email';
+const scope = 'playlist-modify-private playlist-modify-public user-read-private user-read-email';
 
 function generateRandomString(length) {
 
