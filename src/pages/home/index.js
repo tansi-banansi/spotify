@@ -43,6 +43,9 @@ function HomePage(){
 
       submitPlaylist(spotifyBaseUrl, spotifyAccessToken, userId, playlistData)
 
+      setPlaylist([]);
+      setSearchResults([]);
+
     };
 
    

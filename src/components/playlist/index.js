@@ -21,6 +21,7 @@ function Playlist({onSubmit,playlist, onRemove}){
 
         }
         onSubmit(playlistData); 
+        setPlaylistName('')
       };
 
     return (
