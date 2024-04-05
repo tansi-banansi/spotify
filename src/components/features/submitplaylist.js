@@ -22,7 +22,7 @@ const submitPlaylist = async (spotifyBaseUrl, spotifyAccessToken, userId, playli
         const playlist = await response.json();
         const playlistId = playlist.id;
 
-        const addTracksEndpoint = `playlists/${playlistId}/tracks`; 
+        const addTracksEndpoint = `/playlists/${playlistId}/tracks`; 
     
         const addTracksResponse = await fetch((spotifyBaseUrl + addTracksEndpoint), {
             method: 'POST',
