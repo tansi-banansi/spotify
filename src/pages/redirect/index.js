@@ -9,15 +9,9 @@ function RedirectPage(){
     const accessToken = params.get('access_token');
 
     localStorage.setItem('accessToken', accessToken);
-
-    if(accessToken) {
-        return <Navigate to="/home" />;
-    }
+    return <Navigate to="/home" />;
 
 
-    return(
-        null
-    )
 }
 
 export default RedirectPage;
