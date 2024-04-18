@@ -1,8 +1,6 @@
 import React from "react";
 import authentication from "../../components/features/authentication";
 import styles from './index.module.css'
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 function AuthenticationPage(){
 
